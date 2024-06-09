@@ -1,0 +1,20 @@
+# Use a imagem oficial do Node.js como imagem base
+FROM node:14
+
+# Defina o diretório de trabalho
+WORKDIR /usr/src/app
+
+# Copie os arquivos de dependência para o contêiner
+COPY package*.json ./
+
+# Instale as dependências
+RUN npm install
+
+# Copie o restante do código da aplicação
+COPY . .
+
+# Exponha a porta que a aplicação irá rodar
+EXPOSE 3000
+
+# Comando para rodar a aplicação
+CMD ["node", "index.js"]
