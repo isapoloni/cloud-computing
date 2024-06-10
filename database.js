@@ -11,7 +11,7 @@ db.serialize(() => {
   db.run(`INSERT INTO users (name, email) VALUES
     ('Alice', 'alice@example.com'),
     ('Bob', 'bob@example.com'),
-    ('Charlie', 'charlie@example.com')
+    ('Charlie', 'charlie@example.com'),
     ('Isabella', 'testeisa@gmail.com')
   `);
 });

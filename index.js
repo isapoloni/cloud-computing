@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('./database');
+const os = require('os');
 
 const app = express();
 const PORT = 3000;
@@ -31,8 +32,8 @@ app.get('/readiness', (req, res) => {
     .status(200)
     .json({
       message: "O app está pronto!",
-      plataform: os.plataform(),
-      freemen: os.freemen(),
+      plataform: os.platform(),
+      freemen: os.freemem(),
       homedir: os.homedir()
     })
 });
