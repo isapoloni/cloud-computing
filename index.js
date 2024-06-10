@@ -15,12 +15,28 @@ app.get('/consulta-dados', (req, res) => {
 });
 
 app.get('/liveness', (req, res) => {
-  res.status(200).send('Liveness check OK');
+  return res
+    .status(200)
+    .json({
+      message: "O app está vivo!",
+      path: process.cwd(),
+      gid: process.getegid(),
+      uid: process.getuid()
+    })
 });
 
+
 app.get('/readiness', (req, res) => {
-  res.status(200).send('Readiness check OK');
+  return res
+    .status(200)
+    .json({
+      message: "O app está pronto!",
+      plataform: os.plataform(),
+      freemen: os.freemen(),
+      homedir: os.homedir()
+    })
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
