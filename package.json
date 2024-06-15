@@ -1,15 +1,12 @@
 {
-  "name": "node-sqlite-app",
+  "name": "node-mysql-app",
   "version": "1.0.0",
-  "description": "A simple Node.js app to list data from SQLite database",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "sqlite3": "^5.0.0"
-  },
-  "author": "Your Name",
-  "license": "ISC"
+    "mysql": "^2.18.1"
+  }
 }

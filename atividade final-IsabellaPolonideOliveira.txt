@@ -1,0 +1,35 @@
+atividade final - Isabella Poloni de Oliveira - 10482211382
+
+Aplicação Node.js com MySQL
+
+== Descrição
+Esta aplicação Node.js conecta-se a um banco de dados MySQL, cria uma tabela `users` e insere alguns dados de exemplo. Ela fornece três rotas principais:
+- `/consulta-dados` para consultar os dados dos usuários.
+- `/liveness` para verificar se a aplicação está viva.
+- `/readiness` para verificar se a aplicação está pronta para receber tráfego.
+
+== Como executar
+
+1. Certifique-se de ter o Docker e Docker Compose instalados em sua máquina.
+
+2. Coloque os seguintes arquivos no mesmo diretório:
+   - docker-compose.yml
+   - carga.sql
+   - package.json
+   - index.js
+
+3. No terminal, navegue até o diretório onde os arquivos estão localizados e execute o comando:
+
+   - docker-compose up
+
+	3.1 Atualizando Dados
+
+	Para inserir novos dados no banco de dados após a aplicação estar em execução, você pode seguir uma das abordagens abaixo:
+	- Pare e remova os contêineres existentes: docker-compose down
+	- Remova o volume do MySQL para garantir que os dados sejam recriados: docker volume rm `meu-projeto-docker_mysql-data`
+	- Adicione novos dados no carga.sql e inicie novamente os contêineres: docker-compose up
+
+
+
+
+
